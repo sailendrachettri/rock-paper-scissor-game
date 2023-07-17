@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
     color: yellowgreen;
 }
 
-.game{
+.game {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -24,7 +24,7 @@
     justify-content: space-between;
 } */
 
-.score{
+.score {
     display: flex;
     width: 30vw;
     justify-content: space-evenly;
@@ -37,7 +37,8 @@
     gap: 2rem;
 }
 
-.p-count, .c-count {
+.p-count,
+.c-count {
     text-align: center;
     font-size: 1.5rem;
     margin-top: 1rem;
@@ -51,7 +52,9 @@
     gap: 12px;
 }
 
-.rock, .paper, .scissor {
+.rock,
+.paper,
+.scissor {
     padding: 1rem;
     width: 150px;
     border-radius: 20px;
@@ -63,35 +66,43 @@
     font-size: 1rem;
 }
 
-.rock:hover, .paper:hover, .scissor:hover{
+.rock:hover,
+.paper:hover,
+.scissor:hover {
     background: red;
 
 }
 
-.move{
+.move {
     font-size: 2rem;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.m-left{
+.m-left {
     font-size: 1.5rem;
 }
 
-@media screen and (max-width: 612px)
-{
-    .title{
+@media screen and (max-width: 612px) {
+    .title {
         text-align: center;
     }
-    .score{
+
+    .score {
         position: absolute;
         top: 200px;
         width: 100vw;
     }
-    .move{
+
+    .move {
         width: 100vw;
     }
-    .options{
+
+    .options {
         width: 100vw;
     }
+}
+
+.players {
+    margin-top: 3em;
 }

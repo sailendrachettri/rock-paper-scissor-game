@@ -7,26 +7,26 @@ let gameSection = document.getElementById('gameSection');
 let playerGets = document.getElementById('playerGets');
 let computerGets = document.getElementById('computerGets');
 
-
 let rockBtn = document.getElementById('rockBtn');
 let paperBtn = document.getElementById('paperBtn');
 let scissorBtn = document.getElementById('scissorBtn');
 
 // VARIABLES
-let moveCount = 10;
+let moveCount = 16;
 let playerScore = 0;
 let computerScore = 0;
+movesLeft.innerHTML = moveCount
 
-// const rock = 'rock'; // 0 for Rock
-// const paper = 'paper'; // 1 for Paper
-// const scissor = 'scissor'; // 2 for Scissor
+// rock: 0 for Rock
+// paper: 1 for Paper
+// scissor: 2 for Scissor
 
 const handleRock = () => {
     const playerChoice = 'rock'
     const computerChoice = playComputer()
 
     if (playerChoice === 'rock' && computerChoice === 0) {
-        playerScore = playerScore;
+        moveCount++
 
     } else if (playerChoice === 'rock' && computerChoice === 1) {
         computerScore += 1
@@ -38,8 +38,10 @@ const handleRock = () => {
 
     playerCount.innerHTML = playerScore
     computerCount.innerHTML = computerScore
-
     movesLeft.innerHTML = moveCount
+    // setting the player information
+    displayComputerGetInfo(computerChoice)
+    playerGets.innerHTML = 'Rock'
 
     if (moveCount === 0)
         displayWinner();
@@ -51,9 +53,8 @@ const handlePaper = () => {
 
     if (playerChoice === 'paper' && computerChoice === 0) {
         playerScore += 1;
-
     } else if (playerChoice === 'paper' && computerChoice === 1) {
-        playerScore = playerScore
+        moveCount++
     } else if (playerChoice === 'paper' && computerChoice === 2) {
         computerScore += 1
     }
@@ -63,6 +64,10 @@ const handlePaper = () => {
     playerCount.innerHTML = playerScore
     computerCount.innerHTML = computerScore
     movesLeft.innerHTML = moveCount
+
+    // setting the player information
+    displayComputerGetInfo(computerChoice)
+    playerGets.innerHTML = 'Papper'
 
     if (moveCount === 0)
         displayWinner();
@@ -78,7 +83,7 @@ const handleScissor = () => {
     } else if (playerChoice === 'scissor' && computerChoice === 1) {
         playerScore += 1
     } else if (playerChoice === 'scissor' && computerChoice === 2) {
-        playerScore = playerScore
+        moveCount++
     }
 
     moveCount--
@@ -86,11 +91,13 @@ const handleScissor = () => {
     playerCount.innerHTML = playerScore
     computerCount.innerHTML = computerScore
     movesLeft.innerHTML = moveCount
+    // setting the player information
+    displayComputerGetInfo(computerChoice)
+    playerGets.innerHTML = 'Scissor'
 
     if (moveCount === 0)
         displayWinner();
 }
-
 
 // FUNCTION FOR COMPUTER PLAYER
 const playComputer = () => {
@@ -106,5 +113,20 @@ const displayWinner = () => {
         gameSection.innerHTML = 'Player WON the game with socre of ' + playerScore;
 
     } else
-        gameSection.innerHTML = 'MATCH DRAW! both are the winnners';
+        gameSection.innerHTML = 'MATCH DRAW!  with socre of ' + playerScore;
+}
+
+const displayComputerGetInfo = (value) => {
+    let val = "";
+    const computerChoice = value
+
+    if (computerChoice === 0) {
+        val = 'Rock'
+    } else if (computerChoice === 1) {
+        val = 'Paper'
+    } else {
+        val = 'Scissor';
+    }
+
+    computerGets.innerHTML = val
 }
