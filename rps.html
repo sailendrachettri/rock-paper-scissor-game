@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="rps.css">
+
+<body>
+    <section class="game" id="gameSection">
+        <!-- <div class="title">Rock Paper Scissor</div> -->
+        <div class="score">
+            <div class="playerScore">
+                <h2>Player</h2>
+                <p class="p-count" id="playerCount">0</p>
+            </div>
+
+            <div class="computerScore">
+                <h2>Computer</h2>
+                <p class="c-count" id="computerCount">0</p>
+            </div>
+        </div>
+
+        <div class="move">Choose Your Move</div>
+        <div class="m-left"> Moves Left: <span id="movesLeft"> 10 </span></div>
+        <div class="options">
+            <button class="rock" id="rockBtn" onclick="handleRock()">Rock</button>
+            <button class="paper" id="paperBtn" onclick="handlePaper()">PAPER</button>
+            <button class="scissor" id="scissorBtn" onclick="handleScissor()">SCISSOR</button>
+        </div>
+        <span id="resultSection"></span>
+
+        <div>
+            <div id="playerGets">Player: </div>
+            <div id="computerGets">Computer: </div>
+        </div>
+    </section>
+
+    <script src="/js/logic.js"></script>
+</body>
+
+</html>
