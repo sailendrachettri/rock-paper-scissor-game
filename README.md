@@ -48,4 +48,4 @@ Start the Server
 
 
 ## Made By
-- [@SailendraChettri](https://github.com/sailendrachettri) and [@BlessedRai](https://www.instagram.com/blessed_is_hapak)
+- [@SailendraChettri](https://www.instagram.com/01_sailendra) and [@BlessedRai](https://www.instagram.com/blessed_is_hapak)
