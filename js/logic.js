@@ -3,6 +3,7 @@ let computerCount = document.getElementById('computerCount'); // score
 let movesLeft = document.getElementById('movesLeft'); // no of moves display
 let resultSection = document.getElementById('resultSection');
 let gameSection = document.getElementById('gameSection');
+let nameOfThePlayer = document.getElementById('nameOfThePlayer');
 
 let playerGets = document.getElementById('playerGets');
 let computerGets = document.getElementById('computerGets');
@@ -12,9 +13,14 @@ let paperBtn = document.getElementById('paperBtn');
 let scissorBtn = document.getElementById('scissorBtn');
 
 // VARIABLES
-let moveCount = 16;
+let moveCount = 8;
 let playerScore = 0;
 let computerScore = 0;
+let playerName = prompt("Enter your Name")
+
+
+
+playerName === null ? nameOfThePlayer.innerHTML = "Player" : nameOfThePlayer.innerHTML = playerName
 movesLeft.innerHTML = moveCount
 
 // rock: 0 for Rock
@@ -110,7 +116,7 @@ const displayWinner = () => {
         gameSection.innerHTML = 'Computer WON the game with socre of ' + computerScore;
 
     } else if (computerScore < playerScore) {
-        gameSection.innerHTML = 'Player WON the game with socre of ' + playerScore;
+        gameSection.innerHTML = playerName + ' WON the game with socre of ' + playerScore;
 
     } else
         gameSection.innerHTML = 'MATCH DRAW!  with socre of ' + playerScore;
